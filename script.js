@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const startButton = document.querySelector(".today button");
+    const startButton = document.getElementById("startButton");
 
-    if (startButton) {
-        startButton.addEventListener("click", function () {
-            alert("Today's workout is ready! Stay consistent and train safely.");
-        });
-    }
+    startButton.addEventListener("click", function () {
+
+        alert(
+            "Great start, Aditya! 🚀\n\n" +
+            "Today's mission:\n" +
+            "📚 Study\n" +
+            "💻 Coding\n" +
+            "🧠 Learn a new skill\n\n" +
+            "Practice every day and keep improving!"
+        );
+
+    });
 
 });
