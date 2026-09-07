@@ -1,36 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 20px;
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    color: #222;
+    background: #f1f3f5;
+    color: #17202a;
+}
+
+header {
+    background: #17202a;
+    color: white;
+    padding: 28px 20px;
     text-align: center;
 }
 
-h1 {
-    margin-top: 40px;
-    font-size: 32px;
+header h1 {
+    margin: 0;
+    font-size: 28px;
 }
 
-p {
-    font-size: 18px;
-    margin: 20px 0 30px;
+header p {
+    margin: 10px 0 0;
+    font-size: 15px;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 18px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.welcome h2 {
+    margin-top: 0;
+}
+
+.today h2,
+.plan h2,
+.progress h2 {
+    margin-bottom: 12px;
+}
+
+.workout-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.workout-card h3 {
+    margin-top: 0;
+}
+
+.workout-card li {
+    margin: 10px 0;
 }
 
 button {
-    display: block;
     width: 100%;
-    max-width: 350px;
-    margin: 15px auto;
-    padding: 16px;
+    padding: 15px;
+    margin-top: 15px;
     border: none;
     border-radius: 12px;
-    background: #222;
+    background: #17202a;
     color: white;
-    font-size: 17px;
-    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-button:active {
-    transform: scale(0.98);
+.month {
+    background: white;
+    padding: 16px;
+    margin: 10px 0;
+    border-radius: 14px;
+}
+
+.month h3 {
+    margin: 0 0 5px;
+}
+
+.month p {
+    margin: 0;
+}
+
+.progress {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 13px;
 }
