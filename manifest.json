@@ -1,0 +1,11 @@
+{
+  "name": "MilFit - 6 Month Training",
+  "short_name": "MilFit",
+  "description": "A 180-day fitness and training planner.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#eef1f3",
+  "theme_color": "#17202a",
+  "orientation": "portrait",
+  "icons": []
+}
