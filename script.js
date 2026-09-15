@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       from the challenge library above.
     */
 
-    for (let i = challenges.length; i < 150; i++) {
+    for (let i = challenges.length; i < 300; i++) {
         challenges.push(
             challenges[i % 10] +
             " — Challenge #" + (i + 1)
