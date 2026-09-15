@@ -1,4 +1,4 @@
-const CACHE_NAME = "milfit-v1";
+const CACHE_NAME = "milfit-v2";
 
 const FILES_TO_CACHE = [
   "./",
