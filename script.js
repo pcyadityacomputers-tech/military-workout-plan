@@ -3,6 +3,7 @@ if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("./service-worker.js");
     });
 }
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const startButton = document.querySelector(".today button");
@@ -10,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let completedDays =
         Number(localStorage.getItem("milfitCompletedDays")) || 0;
+
+    let lastCompletedDate =
+        localStorage.getItem("milfitLastCompletedDate") || "";
 
     let usedChallenges =
         JSON.parse(localStorage.getItem("milfitUsedChallenges")) || [];
@@ -201,6 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (usedChallenges.length >= 150) {
             usedChallenges = [];
+
             localStorage.setItem(
                 "milfitUsedChallenges",
                 JSON.stringify(usedChallenges)
@@ -229,22 +234,44 @@ document.addEventListener("DOMContentLoaded", function () {
             "🎯 TODAY'S CHALLENGE\n\n" +
             challenges[randomIndex] +
             "\n\nChallenge " +
-            (usedChallenges.length) +
-            " / 150"
+            usedChallenges.length +
+            " / 300"
         );
     }
 
     if (startButton) {
+
         startButton.addEventListener("click", function () {
+
+            const today =
+                new Date().toISOString().split("T")[0];
+
+            if (lastCompletedDate === today) {
+
+                alert(
+                    "Today's training is already completed.\n\n" +
+                    "Come back tomorrow for Day " +
+                    Math.min(completedDays + 1, 180) +
+                    "."
+                );
+
+                return;
+            }
 
             showTodayWorkout();
 
             if (completedDays < 180) {
+
                 completedDays++;
 
                 localStorage.setItem(
                     "milfitCompletedDays",
                     completedDays
+                );
+
+                localStorage.setItem(
+                    "milfitLastCompletedDate",
+                    today
                 );
 
                 updateProgress();
@@ -253,32 +280,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (planButton) {
+
         planButton.addEventListener(
             "click",
             showFullPlan
         );
-    }
-
-    /*
-      Add Challenge button automatically.
-    */
-
-    const challengeButton =
-        document.createElement("button");
-
-    challengeButton.textContent =
-        "🎯 Give Me a Challenge";
-
-    challengeButton.addEventListener(
-        "click",
-        giveChallenge
-    );
-
-    const todaySection =
-        document.querySelector(".today");
-
-    if (todaySection) {
-        todaySection.appendChild(challengeButton);
     }
 
     updateProgress();
