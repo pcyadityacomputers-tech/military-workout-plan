@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
         JSON.parse(localStorage.getItem("milfitUsedChallenges")) || [];
 
     const challenges = [
-        "Complete 10 minutes of easy movement without stopping.",
-        "Do 3 rounds of: 8 squats, 6 incline push-ups, 20-second plank.",
-        "Take a 20-minute brisk walk and finish with 5 minutes of mobility.",
-        "Do 3 rounds of: 10 squats, 8 wall push-ups, 10 reverse lunges.",
-        "Complete 5 minutes of gentle mobility after your normal workout.",
-        "Do 4 rounds of: 8 squats, 6 incline push-ups, 20-second plank.",
-        "Walk or jog easily for 15 minutes, then cool down.",
-        "Complete 3 rounds of 8 squats and 8 incline push-ups.",
-        "Do 10 minutes of mobility focusing on hips, ankles and shoulders.",
-        "Complete a 20-minute easy walk at a steady pace."
+        "Complete 3 rounds: 12 squats, 8 incline push-ups, 25-second plank.",
+        "Complete 4 rounds: 10 squats, 8 incline push-ups, 20-second plank.",
+        "Take a 25-minute brisk walk and finish with 5 minutes of mobility.",
+        "Complete 3 rounds: 10 reverse lunges each side, 10 wall push-ups, 25-second plank.",
+        "Complete 15 minutes of full-body mobility and a 15-minute easy walk.",
+        "Complete 4 rounds: 10 squats, 6 incline push-ups, 20-second plank.",
+        "Complete a 20-minute brisk walk followed by a gentle cool-down.",
+        "Complete 3 rounds: 12 squats, 10 incline push-ups, 20-second plank.",
+        "Complete 15 minutes of mobility focusing on hips, ankles and shoulders.",
+        "Complete a 25-minute steady walk at a comfortable pace."
     ];
 
     /*
-      The challenge system can safely create 150 challenge slots
+      The challenge system creates 300 challenge slots
       from the challenge library above.
     */
 
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function giveChallenge() {
 
-        if (usedChallenges.length >= 150) {
+        if (usedChallenges.length >= 300) {
             usedChallenges = [];
 
             localStorage.setItem(
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let available = [];
 
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 300; i++) {
             if (!usedChallenges.includes(i)) {
                 available.push(i);
             }
