@@ -11,7 +11,34 @@
 <meta name="theme-color" content="#17202a">
 </head>
 <body>
+<div id="onboarding">
+    <div class="onboarding-box">
+        <h1>Welcome to MilFit</h1>
+        <p>Let's set up your profile.</p>
 
+        <label for="age">Select your age:</label>
+
+        <select id="age">
+            <option value="">Choose age</option>
+            <option value="13-15">13–15</option>
+            <option value="16-17">16–17</option>
+            <option value="18+">18+</option>
+        </select>
+
+        <label for="username">Your name or nickname:</label>
+
+        <input
+            id="username"
+            type="text"
+            maxlength="20"
+            placeholder="Enter a nickname"
+        >
+
+        <button id="continueBtn">Continue</button>
+
+        <p id="onboardingMessage"></p>
+    </div>
+</div>
     <header>
         <h1>MilFit</h1>
         <p>6-Month Daily Training Guide</p>
